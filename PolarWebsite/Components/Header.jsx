@@ -1,8 +1,9 @@
 import React from 'react';
+import "../Styles/Header.css"
 
 const Header = () => {
     return (
-        <div id="Header">
+        <div id="header">
             <div className="logo">Logo</div>
             <nav>
                 <ul className="nav-links">
