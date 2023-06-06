@@ -1,12 +1,33 @@
-import React from 'react';
-import "../Styles/Header.css"
+import React, { useState, useEffect } from 'react';
+import "../Styles/Header.css";
+import Logo from "../Logotype 2-02.png";
 
-const Header = () => {
+const Header = ({ background }) => {
+    const [scrollBackground, setScrollBackground] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+
+            if (scrollTop > 0) {
+                setScrollBackground(true);
+            } else {
+                setScrollBackground(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <div id="header">
-            <div className="logo">Logo</div>
+        <div id="header" style={{ backgroundColor: background }}>
+            <img src={Logo} id="HeaderLogo" alt="Logo"></img>
             <nav>
-                <ul className="nav-links">
+                <ul className={`nav-links ${scrollBackground ? 'black' : ''}`}>
                     <li>
                         <a href="/">ICE BATHS</a>
                     </li>
@@ -18,7 +39,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <div className="burger-menu">
+            <div className={`burger-menu ${scrollBackground ? 'black' : ''}`}>
                 <label htmlFor="toggle" className="burger-icon">
                     <span></span>
                     <span></span>

@@ -3,31 +3,187 @@
     width: 100vw;
     margin: 0;
     padding: 0;
-
 }
 
 #Render {
-    height: 70vh;
-    margin-top: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 90vh;
+    width: 100%;
 }
 
-#PolarTitle {
-    font-size: 5vw;
+#RenderImg {
+    width: 100%;
+    object-fit: cover;
+    animation: fade-in 2s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    height: 30%;
+    width: 30%;
+    /* animation: slide-up 1s ease-in-out; */
+}
+
+#ImgTitle {
+    height: 150%;
+    margin-bottom: -20%;
+    animation: fade-in 3s ease-in-out;
 }
 
 #PolarDescription {
-    font-size: 2vw;
+    font-size: 1.8vw;
+    color: rgba(255, 255, 255, 0.779);
+    text-align: end;
+    position: relative;
+    left: 25%;
+    animation: slide-up 5s ease-in-out;
 }
 
 #ShopAllButton {
-    font-size: 2vw;
-    text-align: center;
-    margin-top: 15%;
+    font-size: 1.8vw;
+    background-color: #fff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(0, 170, 255);
+    padding: 6%;
+    position: relative;
+    border-radius: 10px;
+    left: 50%;
+    animation: fade-in 7s ease-in-out;
 }
+
+
+
+#Benefits {
+    position: relative;
+    /* Add position relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20%;
+}
+
+#BannerBeneficios {
+    width: 100%;
+    height: auto;
+}
+
+#TitleandDescription {
+    position: absolute;
+    /* Add position absolute */
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#BeneficiosTitle {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: -3%;
+    font-weight: bold;
+}
+
+#BeneficiosDescription {
+    font-size: 1.rem;
+    color: white;
+}
+
+#BenefitsLeft {
+    position: absolute;
+    /* Add position absolute */
+    top: 55%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 30vw;
+}
+
+#BenefitsRight {
+    position: absolute;
+    /* Add position absolute */
+    top: 55%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 30vw;
+}
+
+#LogoBenefits {
+    width: 15%;
+    margin-bottom: -3%;
+}
+
+#LogoBenefitsR {
+    width: 15%;
+    margin-bottom: -3%;
+    transform: rotate(270deg);
+
+}
+
+
+
+#BenefitsTitle {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: -1%;
+}
+
+
+#BenefitsDescription {
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 7%;
+}
+
+.animate-title {
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-description {
+    animation: fade-in 1s ease-out forwards;
+}
+
+.animate-left {
+    animation: fade-in 3s ease-out forwards;
+}
+
+.animate-right {
+    animation: fade-in 3s ease-out forwards;
+}
+
+
+.hide {
+    opacity: 0;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
 
 #Products {
     margin-top: 20%;
@@ -36,7 +192,6 @@
     align-items: center;
     flex-direction: column;
 }
-
 
 #ProductsTitle {
     font-size: 5vw;
@@ -69,4 +224,28 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* Define fade-in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Define slide-up animation */
+@keyframes slide-up {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

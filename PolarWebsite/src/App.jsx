@@ -1,18 +1,36 @@
-
-import './App.css'
-import Header from '../Components/Header'
-import Body from '../Components/Body'
-import Footer from '../Components/Footer'
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import Header from '../Components/Header';
+import Body from '../Components/Body';
+import Footer from '../Components/Footer';
 
 function App() {
+  const [headerBackground, setHeaderBackground] = useState('transparent');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 0) {
+        setHeaderBackground('white');
+      } else {
+        setHeaderBackground('transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div id="WholeContainer">
-      <Header />
+      <Header background={headerBackground} />
       <Body />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
