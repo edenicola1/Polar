@@ -24,7 +24,7 @@ const Header = ({ background }) => {
     }, []);
 
     return (
-        <div id="header" style={{ backgroundColor: background }}>
+        <header style={{ backgroundColor: background }}>
             <img src={Logo} id="HeaderLogo" alt="Logo"></img>
             <nav>
                 <ul className={`nav-links ${scrollBackground ? 'black' : ''}`}>
@@ -51,7 +51,7 @@ const Header = ({ background }) => {
                     <a href="/">Option 3</a>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 

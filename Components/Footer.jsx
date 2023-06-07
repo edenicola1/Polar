@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/Footer.css';
+import Logo from "../Logotype 2-02.png";
 
 const Footer = () => {
     return (
-        <div id="FooterContainer">
+        <footer id="FooterContainer">
             <section id="FooterLinks">
                 <div className="footer-column">
                     <h3>Shop</h3>
@@ -39,10 +40,10 @@ const Footer = () => {
                 </div>
             </section>
             <section id="FooterInfo">
-                <p id="LogoFooter"> LOGO </p>
+                <img src={Logo} id="FooterLogo"></img>
                 <p id="CompanyInfo"> © 2023, Polar. - Company No: 5478956748 </p>
             </section>
-        </div>
+        </footer>
     );
 };
 
