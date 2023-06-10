@@ -29,13 +29,13 @@ const Header = ({ background }) => {
             <nav>
                 <ul className={`nav-links ${scrollBackground ? 'black' : ''}`}>
                     <li>
-                        <a href="/">ICE BATHS</a>
+                        <a href="/">PODS</a>
                     </li>
                     <li>
-                        <a href="/">THERAPY</a>
+                        <a href="/"> BENEFICIOS </a>
                     </li>
                     <li>
-                        <a href="/">ABOUT US</a>
+                        <a href="/">SOBRE NOSOTROS</a>
                     </li>
                 </ul>
             </nav>

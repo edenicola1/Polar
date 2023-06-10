@@ -61,8 +61,15 @@
     position: relative;
     border-radius: 10px;
     left: 50%;
-    animation: fade-in 7s ease-in-out;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+#ShopAllButton:hover {
+    background-color: #fff;
+    color: rgb(0, 170, 255);
+}
+
+
 
 
 
@@ -166,6 +173,10 @@
     animation: fade-in 3s ease-out forwards;
 }
 
+.animate-carouse {
+    animation: fade in 2s ease-out forwards;
+}
+
 
 .hide {
     opacity: 0;
@@ -186,27 +197,102 @@
 
 
 #Products {
-    margin-top: 20%;
+    margin-top: 10%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url('../Fondo.jpg');
+    object-fit: cover;
 }
 
 #ProductsTitle {
     font-size: 5vw;
     text-align: center;
+    margin-top: -7%;
 }
 
 #ProductsDescription {
-    font-size: 2vw;
+    font-size: 1vw;
+    margin-top: -5%;
     text-align: center;
 }
 
 #ProductCarousel {
-    height: 40vh;
-    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
 }
+
+#divProduct {
+    height: 45vh;
+    margin-top: 15%;
+    position: relative;
+}
+
+#fotoProduct1 {
+    height: 130%;
+    width: 75%;
+    margin-top: -15%;
+}
+
+#fotoProduct2 {
+    height: 80%;
+    width: 26%;
+    margin-top: -5%;
+
+}
+
+#fotoProduct3 {
+    height: 83%;
+    width: 28%;
+    margin-top: -5%;
+
+}
+
+.slide-legend {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 20%;
+}
+
+.slide-legend h3 {
+    font-size: 1.5vw;
+
+}
+
+.slide-legend p {
+    font-size: 1.5vw;
+    margin-top: 0%;
+    font-weight: bold;
+}
+
+
+.custom-arrow-left {
+    align-self: center;
+    margin-right: 10px;
+    /* Adjust the margin as needed */
+}
+
+.custom-arrow-right {
+    align-self: center;
+    margin-left: 10px;
+    /* Adjust the margin as needed */
+}
+
+
+
+
+
+
+
 
 #Sorteo {
     margin-top: 0%;

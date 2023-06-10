@@ -9,6 +9,15 @@ import LogoRes from "../Icon Aumento Resistencia-01.png";
 import LogoMood from "../icon mood.png";
 import LogoMental from "../icon enfoque mental-01.png";
 import LogoPlanta from "../icon Sistema inmunológico-01.png";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import FondoCarousel from "../Fondo.jpg";
+import Product1 from "../Polar + Tapa Blanca.png";
+import Product2 from "../Polar + 2 Tapas.png";
+import Product3 from "../Polar+2 Tapas+ bag.png";
+import arrowLeftImage from "../Flecha izq.png"
+import arrowRightImage from "../Flecha der.png";
+
 
 function Body() {
     useEffect(() => {
@@ -18,12 +27,18 @@ function Body() {
         const benefitsLeft = document.getElementById('BenefitsLeft');
         const benefitsRight = document.getElementById('BenefitsRight');
 
+        const productsSection = document.getElementById('Products');
+        const productsTitle = document.getElementById('ProductsTitle');
+        const productsDescription = document.getElementById('ProductsDescription');
+        const productCarousel = document.getElementById('ProductCarousel');
+
         const handleScroll = () => {
             const scrollPosition = window.pageYOffset;
             const benefitsSectionTop = benefitsSection.offsetTop;
+            const productsSectionTop = productsSection.offsetTop;
             const windowHeight = window.innerHeight;
 
-            if (scrollPosition > benefitsSectionTop - windowHeight / 2) {
+            if (scrollPosition > benefitsSectionTop - windowHeight / 1.2) {
                 title.classList.add('animate-title');
                 description.classList.add('animate-description');
                 benefitsLeft.classList.add('animate-left');
@@ -34,6 +49,16 @@ function Body() {
                 benefitsLeft.classList.remove('animate-left');
                 benefitsRight.classList.remove('animate-right');
             }
+
+            if (scrollPosition > productsSectionTop - windowHeight / 1.2) {
+                productsTitle.classList.add('animate-title');
+                productsDescription.classList.add('animate-description');
+                productCarousel.classList.add('animate-carousel');
+            } else {
+                productsTitle.classList.remove('animate-title');
+                productsDescription.classList.remove('animate-description');
+                productCarousel.classList.remove('animate-carousel');
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -42,6 +67,8 @@ function Body() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+
 
     return (
         <div id="BodyContainer">
@@ -83,15 +110,39 @@ function Body() {
                     <p id="BenefitsDescription">Sumergirse en agua fría después de entrenar ayuda a reducir la inflamación muscular, acelerar la recuperación y mejorar el rendimiento atlético en general.</p>
 
                 </div>
-
             </section>
+
             <section id="Products">
-                <p id="ProductsTitle"> ICE BATHS </p>
-                <p id="ProductsDescription"> djfbdjgfdjfndfkdnfg </p>
-                <div id="ProductCarousel">
-                    CARRUSEL PRODUCTOS
+                <p id="ProductsTitle" className="hide"> PRODUCTOS POLAR</p>
+                <p id="ProductsDescription" className="hide">Polar te ofrece los mejores productos de recuperación deportiva que no se encuentran en las tiendas tradicionales </p>
+                <div id="ProductCarousel" >
+                    <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} showStatus={false} showIndicators={false}>
+                        <div id="divProduct">
+                            <img src={Product1} alt="Image 1" id="fotoProduct1" />
+                            <div className="slide-legend">
+                                <h3>Cápsula de inmersión en frío </h3>
+                                <p> $4000 </p>
+                            </div>
+                        </div>
+                        <div id="divProduct">
+                            <img src={Product2} alt="Image 2" id="fotoProduct2" />
+                            <div className="slide-legend">
+                                <h3>CCápsula de inmersión en frío + Covertor</h3>
+                                <p>$5000 </p>
+                            </div>
+                        </div>
+                        <div id="divProduct">
+                            <img src={Product3} alt="Image 3" id="fotoProduct3" />
+                            <div className="slide-legend">
+                                <h3>Cápsula de inmersión en frío + Covertor + Mochila para transporte </h3>
+                                <p>$6000 </p>
+                            </div>
+                        </div>
+
+                    </Carousel>
                 </div>
             </section>
+
             <section id="Sorteo">
                 Sorteo
             </section>
