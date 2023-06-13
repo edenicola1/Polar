@@ -9,35 +9,34 @@ const Footer = () => {
                 <div className="footer-column">
                     <h3>Shop</h3>
                     <ul>
-                        <li>Product 1</li>
-                        <li>Product 2</li>
-                        <li>Product 3</li>
+                        <li>Pod de inmersión en frío </li>
+                        <li>Pod de inmersión en frío + Covertor</li>
+                        <li>Pod de inmersión en frío + Covertor + Mochila para transporte</li>
                     </ul>
                 </div>
                 <div className="footer-column">
                     <h3>Info</h3>
                     <ul>
-                        <li>About Us</li>
-                        <li>Shipping</li>
-                        <li>Returns</li>
+                        <li>Sobre Nosotros</li>
+                        <li>Envíos & Devoluciones</li>
+                        <li>Términos & Condiciones </li>
                     </ul>
                 </div>
                 <div className="footer-column">
                     <h3>Contact</h3>
                     <ul>
-                        <li>Email: example@example.com</li>
-                        <li>Phone: 123-456-7890</li>
-                        <li>Address: 123 Street, City</li>
+                        <li>Email: contacto@polarplungecompany.com </li>
+                        <li>Teléfono: 095786382 / 095444525 </li>
                     </ul>
                 </div>
-                <div className="footer-column">
+                {/* <div className="footer-column">
                     <h3>Newsletter</h3>
                     <p>Subscribe to our newsletter for updates.</p>
                     <form>
                         <input type="email" placeholder="Enter your email" />
                         <button type="submit">Subscribe</button>
                     </form>
-                </div>
+                </div> */}
             </section>
             <section id="FooterInfo">
                 <img src={Logo} id="FooterLogo"></img>

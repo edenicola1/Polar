@@ -76,7 +76,8 @@ function Body() {
                 <img src={Render} id="RenderImg" alt="Polar Banner"></img>
                 <div className="overlay">
                     <img src={ImgTitle} id="ImgTitle"></img>
-                    <p id="PolarDescription"> Descubrí el <span style={{ color: "white", fontWeight: "bold" }}>poder</span> de la inmersión en frío y experimentá una <span style={{ color: "white", fontWeight: "bold" }}>recuperación</span> y un <span style={{ color: "white", fontWeight: "bold" }}>rendimiento</span> óptimo </p>                    <button id="ShopAllButton">Ver Productos </button>
+                    <p id="PolarDescription"> Descubrí el <span style={{ color: "white", fontWeight: "bold" }}>poder</span> de la inmersión en frío y experimentá una <span style={{ color: "white", fontWeight: "bold" }}>recuperación</span> y un <span style={{ color: "white", fontWeight: "bold" }}>rendimiento</span> óptimo </p>
+                    <button id="ShopAllButton">Ver Productos </button>
                 </div>
             </section>
 
@@ -120,21 +121,21 @@ function Body() {
                         <div id="divProduct">
                             <img src={Product1} alt="Image 1" id="fotoProduct1" />
                             <div className="slide-legend">
-                                <h3>Cápsula de inmersión en frío </h3>
+                                <h3>Pod de inmersión en frío </h3>
                                 <p> $4000 </p>
                             </div>
                         </div>
                         <div id="divProduct">
                             <img src={Product2} alt="Image 2" id="fotoProduct2" />
                             <div className="slide-legend">
-                                <h3>CCápsula de inmersión en frío + Covertor</h3>
+                                <h3>Pod de inmersión en frío + Covertor</h3>
                                 <p>$5000 </p>
                             </div>
                         </div>
                         <div id="divProduct">
                             <img src={Product3} alt="Image 3" id="fotoProduct3" />
                             <div className="slide-legend">
-                                <h3>Cápsula de inmersión en frío + Covertor + Mochila para transporte </h3>
+                                <h3>Pod de inmersión en frío + Covertor + Mochila para transporte </h3>
                                 <p>$6000 </p>
                             </div>
                         </div>
@@ -147,7 +148,11 @@ function Body() {
                 Sorteo
             </section>
             <section id="PolarSocial">
-                SOCIALS
+                <p id="SocialsTitle" > Polar Social </p>
+                <p id="SocialsDescription" > Entrá a nuestro Instagram para ver el contenido de nuestros deportistas, coaches de salud y todos los usuarios de Polar! </p>
+                <button ></button>
+
+
             </section>
         </div>
     )
