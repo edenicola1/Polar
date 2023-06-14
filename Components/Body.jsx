@@ -17,6 +17,10 @@ import Product2 from "../Polar + 2 Tapas.png";
 import Product3 from "../Polar+2 Tapas+ bag.png";
 import arrowLeftImage from "../Flecha izq.png"
 import arrowRightImage from "../Flecha der.png";
+import IgLogo from "../instagram-logo-instagram-icon-transparent-free-png.webp";
+import Foto1 from "../DSC00329.webp";
+import Foto2 from "../DSC00383.webp";
+import Foto3 from "../the-ice-pod.webp"
 
 
 function Body() {
@@ -144,13 +148,21 @@ function Body() {
                 </div>
             </section>
 
-            <section id="Sorteo">
+            {/* <section id="Sorteo">
                 Sorteo
-            </section>
+            </section> */}
             <section id="PolarSocial">
                 <p id="SocialsTitle" > Polar Social </p>
                 <p id="SocialsDescription" > Entrá a nuestro Instagram para ver el contenido de nuestros deportistas, coaches de salud y todos los usuarios de Polar! </p>
-                <button ></button>
+
+                <div id="DivFotos">
+                    <img src={Foto1} id="Foto1" className="image-hover" alt="Foto 1" />
+                    <img src={Foto2} id="Foto2" className="image-hover" alt="Foto 2" />
+                    <img src={Foto3} id="Foto3" className="image-hover" alt="Foto 3" />
+                </div>
+
+                <img src={IgLogo} id="IgLogo" className="image-hover" alt="Instagram Logo" />
+
 
 
             </section>

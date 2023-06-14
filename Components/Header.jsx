@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import "../Styles/Header.css";
-import Logo from "../Logotype 2-02.png";
+import '../Styles/Header.css';
+import Logo from '../Logotype 2-02.png';
 
 const Header = ({ background }) => {
     const [scrollBackground, setScrollBackground] = useState(false);
+    const [scrollLeft, setScrollLeft] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -11,8 +12,10 @@ const Header = ({ background }) => {
 
             if (scrollTop > 0) {
                 setScrollBackground(true);
+                setScrollLeft(true);
             } else {
                 setScrollBackground(false);
+                setScrollLeft(false);
             }
         };
 
@@ -23,34 +26,31 @@ const Header = ({ background }) => {
         };
     }, []);
 
+    const scrollToSection = (event, targetId) => {
+        event.preventDefault();
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <header style={{ backgroundColor: background }}>
-            <img src={Logo} id="HeaderLogo" alt="Logo"></img>
+            <img src={Logo} id="HeaderLogo" alt="Logo" />
             <nav>
-                <ul className={`nav-links ${scrollBackground ? 'black' : ''}`}>
+                <ul className={`nav-links ${scrollBackground ? 'black' : ''} ${scrollLeft ? 'scroll-left' : ''}`}>
+
                     <li>
-                        <a href="/">PODS</a>
+                        <a href="/" onClick={(event) => scrollToSection(event, 'Benefits')}>BENEFICIOS</a>
                     </li>
                     <li>
-                        <a href="/"> BENEFICIOS </a>
+                        <a href="/" onClick={(event) => scrollToSection(event, 'Products')}>PODS</a>
                     </li>
                     <li>
-                        <a href="/">SOBRE NOSOTROS</a>
+                        <a href="/" onClick={(event) => scrollToSection(event, 'about-us')}>SOBRE NOSOTROS</a>
                     </li>
                 </ul>
             </nav>
-            <div className={`burger-menu ${scrollBackground ? 'black' : ''}`}>
-                <label htmlFor="toggle" className="burger-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                <div className="dropdown-menu">
-                    <a href="/">Option 1</a>
-                    <a href="/">Option 2</a>
-                    <a href="/">Option 3</a>
-                </div>
-            </div>
         </header>
     );
 };
