@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import "../Styles/Body.css";
+
 import Render from "../Banner Web Principal Corrección.png";
 import ImgTitle from "../Logotype 1-01.png";
 import BannerBeneficios from "../Banner web beneficios.jpg";
@@ -36,10 +37,17 @@ function Body() {
         const productsDescription = document.getElementById('ProductsDescription');
         const productCarousel = document.getElementById('ProductCarousel');
 
+        const socialsSection = document.getElementById('PolarSocial');
+        const socialsTitle = document.getElementById('SocialsTitle');
+        const socialsDescription = document.getElementById('SocialsDescription');
+        const socialsImages = document.getElementById('DivFotos');
+        const socialsLogo = document.getElementById('IgLogo');
+
         const handleScroll = () => {
             const scrollPosition = window.pageYOffset;
             const benefitsSectionTop = benefitsSection.offsetTop;
             const productsSectionTop = productsSection.offsetTop;
+            const socialsSectionTop = socialsSection.offsetTop;
             const windowHeight = window.innerHeight;
 
             if (scrollPosition > benefitsSectionTop - windowHeight / 1.2) {
@@ -63,6 +71,18 @@ function Body() {
                 productsDescription.classList.remove('animate-description');
                 productCarousel.classList.remove('animate-carousel');
             }
+
+            if (scrollPosition > socialsSectionTop - windowHeight / 1.2) {
+                socialsTitle.classList.add('animate-title');
+                socialsDescription.classList.add('animate-description');
+                socialsImages.classList.add('animate-images');
+                socialsLogo.classList.add('animate-logo');
+            } else {
+                socialsTitle.classList.remove('animate-title');
+                socialsDescription.classList.remove('animate-description');
+                socialsImages.classList.remove('animate-images');
+                socialsLogo.classList.remove('animate-logo');
+            };
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -70,7 +90,16 @@ function Body() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
     }, []);
+
+    const scrollToSection = (event, targetId) => {
+        event.preventDefault();
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
 
 
@@ -81,7 +110,7 @@ function Body() {
                 <div className="overlay">
                     <img src={ImgTitle} id="ImgTitle"></img>
                     <p id="PolarDescription"> Descubrí el <span style={{ color: "white", fontWeight: "bold" }}>poder</span> de la inmersión en frío y experimentá una <span style={{ color: "white", fontWeight: "bold" }}>recuperación</span> y un <span style={{ color: "white", fontWeight: "bold" }}>rendimiento</span> óptimo </p>
-                    <button id="ShopAllButton">Ver Productos </button>
+                    <button id="ShopAllButton" onClick={(event) => scrollToSection(event, 'Products')}>Ver Productos </button>
                 </div>
             </section>
 
@@ -152,10 +181,10 @@ function Body() {
                 Sorteo
             </section> */}
             <section id="PolarSocial">
-                <p id="SocialsTitle" > Polar Social </p>
-                <p id="SocialsDescription" > Entrá a nuestro Instagram para ver el contenido de nuestros deportistas, coaches de salud y todos los usuarios de Polar! </p>
+                <p id="SocialsTitle" className="hide" > Polar Social </p>
+                <p id="SocialsDescription" className="hide"> Entrá a nuestro Instagram para ver el contenido de nuestros deportistas, coaches de salud y todos los usuarios de Polar! </p>
 
-                <div id="DivFotos">
+                <div id="DivFotos" className="hide">
                     <img src={Foto1} id="Foto1" className="image-hover" alt="Foto 1" />
                     <img src={Foto2} id="Foto2" className="image-hover" alt="Foto 2" />
                     <img src={Foto3} id="Foto3" className="image-hover" alt="Foto 3" />

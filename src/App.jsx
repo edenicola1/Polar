@@ -25,11 +25,13 @@ function App() {
   }, []);
 
   return (
+    // <div id='root'>
     <div id="WholeContainer">
       <Header background={headerBackground} />
       <Body />
       <Footer />
     </div>
+    // </div>
   );
 }
 

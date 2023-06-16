@@ -34,20 +34,39 @@ const Header = ({ background }) => {
         }
     };
 
+    const handleLogoClick = () => {
+        window.location.href = window.location.origin + window.location.pathname;
+    };
+
+
     return (
         <header style={{ backgroundColor: background }}>
-            <img src={Logo} id="HeaderLogo" alt="Logo" />
+            <img
+                src={Logo}
+                id="HeaderLogo"
+                alt="Logo"
+                onClick={handleLogoClick}
+                style={{ cursor: 'pointer' }}
+            />
             <nav>
-                <ul className={`nav-links ${scrollBackground ? 'black' : ''} ${scrollLeft ? 'scroll-left' : ''}`}>
-
+                <ul
+                    className={`nav-links ${scrollBackground ? 'black' : ''} ${scrollLeft ? 'scroll-left' : ''
+                        }`}
+                >
                     <li>
-                        <a href="/" onClick={(event) => scrollToSection(event, 'Benefits')}>BENEFICIOS</a>
+                        <a href="/" onClick={(event) => scrollToSection(event, 'Benefits')}>
+                            BENEFICIOS
+                        </a>
                     </li>
                     <li>
-                        <a href="/" onClick={(event) => scrollToSection(event, 'Products')}>PODS</a>
+                        <a href="/" onClick={(event) => scrollToSection(event, 'Products')}>
+                            PODS
+                        </a>
                     </li>
                     <li>
-                        <a href="/" onClick={(event) => scrollToSection(event, 'about-us')}>SOBRE NOSOTROS</a>
+                        <a href="/" onClick={(event) => scrollToSection(event, 'about-us')}>
+                            SOBRE NOSOTROS
+                        </a>
                     </li>
                 </ul>
             </nav>

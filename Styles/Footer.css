@@ -4,7 +4,7 @@ footer {
     width: 100vw;
     color: black;
     margin: -10px;
-    transition: transform 1.5s ease;
+    transition: transform 0.7s ease;
     transform: translateY(100%);
 }
 

@@ -9,6 +9,7 @@
     width: 100vw;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 #Render {
@@ -25,6 +26,8 @@
     object-fit: cover;
     animation: fade-in 2s ease-in-out;
 }
+
+
 
 .overlay {
     position: absolute;
@@ -105,7 +108,7 @@
 }
 
 #BeneficiosTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: white;
     margin-bottom: -3%;
     font-weight: bold;
@@ -139,13 +142,25 @@
 #LogoBenefits {
     width: 15%;
     margin-bottom: -3%;
+    transition: transform 0.9s;
 }
 
 #LogoBenefitsR {
     width: 15%;
     margin-bottom: -3%;
     transform: rotate(270deg);
+    transition: transform 0.9s;
 
+}
+
+#LogoBenefits:hover {
+    transform: scale(1.2);
+    transform: rotate(360deg);
+}
+
+#LogoBenefitsR:hover {
+    transform: scale(1.2);
+    transform: rotate(630deg);
 }
 
 
@@ -404,5 +419,38 @@
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+
+.animate-images {
+    animation: slideInImages 1.5s ease-in-out forwards;
+}
+
+.animate-logos {
+    animation: slideInLogos 1.5s ease-in-out forwards;
+}
+
+@keyframes slideInImages {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLogos {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

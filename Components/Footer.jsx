@@ -45,7 +45,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="footer-column">
-                    <h3>Contact</h3>
+                    <h3>Contacto</h3>
                     <ul>
                         <li>Email: contacto@polarplungecompany.com </li>
                         <li>Teléfono: 095786382 / 095444525 </li>
